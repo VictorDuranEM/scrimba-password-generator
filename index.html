@@ -1,0 +1,40 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <script defer src="index.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <button class="toggle-night" onclick="toggleNightMode()">Toggle Night Mode</button>
+            <h1 id="title" class="title">Generate a <br><span>random password</span></h1>
+            <p id="message" class="message">Never use an insecure password again.</p>
+            <div class="interactive">
+                <button class="btn" onclick="printPasswords()">Generate passwords</button>
+                <div id="optionals" class="optionals">
+                    <p id="error-msg" class="error-msg" hidden>Min 5 and Max 20</p>
+                    <div>
+                        <label># of characters:</label>
+                        <input type="number" id="char-count" class="char-count" min="5" max="20" value=15>
+                    </div>
+                    <div>
+                        <label class="checkbox-container">
+                            Numbers
+                            <input type="checkbox" id="numbers-chk">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="checkbox-container">
+                            Symbols
+                            <input type="checkbox" id="symbols-chk">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <hr id="separator" class="separator">
+            <div class="passwords">
+                <p onClick="copyToClipboard(this.id)" id="password-1"></p>
+                <p onClick="copyToClipboard(this.id)" id="password-2"></p>
+            </div>
+        </div>
+    </body>
+</html>
